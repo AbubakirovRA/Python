@@ -1,6 +1,4 @@
 # Показать последнюю цифру трёхзначного числа
-import numbers
-
 
 def data_request():
     while True:
