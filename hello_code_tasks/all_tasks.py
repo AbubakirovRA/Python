@@ -1,3 +1,7 @@
+# Ссылка на новый список задач - 
+# https://docs.google.com/document/d/1lfqWiTWN7bUUdZzrholy7Q9sDeInTR_R2g5tddI0aWs/edit?usp=sharing
+# список задач может изменяться
+
 # Почувствуй себя интерном
 
 # 0. Вывести квадрат числа
