@@ -17,9 +17,10 @@ def find_str(str1, str2):
                     count += 1
                 j += 1
         i += 1
+    # count = str1.count(str2) # встроенный функционал Питона, делает то же самое
     return count
 
 
-s1 = 'awklmdl cSLKFelkcvfkdlawklmdyuawk'
-s2 = 'LK'
+s1 = 'qwertywqertywqertwqertyyyqewtrtqrweyqrweyewrqyqqrteqr'
+s2 = 'ert'
 print(find_str(s1, s2))
