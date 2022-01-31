@@ -7,8 +7,8 @@ write_to_file.write_to_file(name)
 import read_from_file
 lines = read_from_file.read_line()
 print(lines)
+print(lines[0])
 print(lines[1])
-print(lines[2])
 
 import find_string
 print(find_string.find_str(lines[0], lines[1]))
