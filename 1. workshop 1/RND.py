@@ -1,4 +1,4 @@
 # Вывод случайного числа
 import random
-a = random.randint(2, 23)
+a = random.randint(1, 4)
 print(a)
