@@ -35,8 +35,8 @@ def check_element(data, element, count):
             exception_index.append(i)
         i +=1
 
-data = [1, 4, 7, 8, 10, 3, 4, 7, 1, 7, 1, 4 , 5, 1, 3, 10, 8, 5]
-print(get_unique(data))
+data = [1, 4, 7, 8, 10, 3, 4, 7, 1, 7, 1, 4 , 5, 1]
+print(f'{data}  =>  {get_unique(data)}')
 
 
 # ______________________________________
