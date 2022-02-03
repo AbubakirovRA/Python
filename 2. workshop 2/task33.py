@@ -1,32 +1,54 @@
 # 33. Дана последовательность чисел.
 # Получить список уникальных элементов заданной последовательности.
 
-def get_unique(list):
+def get_unique(data):
     i = 0
-    unique = []
-    while i < len(list):
-        if check_element(list, list[i], i):
-            unique.append(list[i])
-            i +=1
-        else:
-            i +=1
-        
-    return unique
-
-def check_element(list, element, count):
     exception_index = []
-    i= count +1
-    while i < len(list):
-        if i == len(list)-1:
-            if list[i] == element:
-                return False
+    while i < len(data):
+        if i == len(data) - 1:
+            break
+        exception_index = check_element(data, data[i], i)
+        if exception_index == []:
+            i +=1
+            continue
+        else:
+            data = [i for i in data if data.index(i) not in exception_index]
+            # for n in sorted(exception_index, reverse=True):
+            #     del data[n]
+            i = 0
+            continue
+    return data
+
+def check_element(data, element, count):
+    i = count +1
+    exception_index = []
+    while i < len(data):
+        if i == len(data)-1:
+            if data[i] == element:
+                exception_index.append(count)
+                exception_index.append(i)
+                return exception_index
             else:
-                return True
-        elif list[i] == element:
+                return exception_index
+        elif data[i] == element:
+            exception_index.append(count)
             exception_index.append(i)
         i +=1
 
-list = [1, 4, 7, 8, 10, 3, 4, 7, 1, 7, 1]
-print(get_unique(list))
+data = [1, 4, 7, 8, 10, 3, 4, 7, 1, 7, 1, 4 , 5, 1, 3, 10, 8, 5]
+print(get_unique(data))
+
+
+# ______________________________________
+# Получение количества уникальных элементов
+
+# list_d = [100, 3, 100, "c", 100, 7.9, "c", 15]
+# number_of_elements = len(list_d)
+# number_of_unique_elements = len(set(list_d))
+# print("Number of elements in the list: ", number_of_elements)
+# print("Number of unique elements in the list: ", number_of_unique_elements)
+
+
+
 
 
