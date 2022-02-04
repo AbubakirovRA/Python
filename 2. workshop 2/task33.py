@@ -6,6 +6,7 @@
 def polynom():
     import random
     index = []
+    rnd = 0
     while True:
         try:
             k = int(input('enter k value '))
@@ -17,17 +18,43 @@ def polynom():
             print('Wrong enter')
     for i in range(0, k+1):
         if i == 0:
-            index.append(str(random.randint(0, 100)))
+            rnd = random.randint(0, 100)
+            if rnd == 0:
+                index.append('')
+            else:
+                index.append(str(rnd))
         elif i == 1:
-            index.append(f'{str(random.randint(0, 100))}*x ')
+            rnd = random.randint(0, 100)
+            if rnd == 0:
+                index.append('')
+            else:
+                index.append(f'{str(rnd)}*x ')
         else:
-            index.append(f'{str(random.randint(0, 100))}*x^{i} ')
-    string = f'{str(index[k])}+ '
+            if i == k + 1:
+                rnd = random.randint(1, 100)
+            else:
+                rnd = random.randint(0, 100)
+                if rnd == 0:
+                    index.append('')
+                else:            
+                    index.append(f'{str(rnd)}*x^{i} ')
+    if index[k] == '':
+        string = ''
+    else:
+        string = f'{str(index[k])}+ '
     for j in reversed(range(k)):
         if j == 0:
-            string += str(index[j])
+            if str(index[j])=='':
+                string += ''
+            else:
+                string += str(index[j])
         else:
-            string += str(index[j]) + '+ '
+            if str(index[j])=='':
+                string += ''
+            else:
+                string += str(index[j]) + '+ '
+    if index[k] == '':
+        string[:-1]
     string = string + ' = 0'
     return string
 
