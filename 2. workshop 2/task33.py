@@ -1,32 +1,28 @@
-# 33. Дана последовательность чисел.
-# Получить список уникальных элементов заданной последовательности.
-
-def get_unique(list):
-    i = 0
-    unique = []
-    while i < len(list):
-        if check_element(list, list[i], i):
-            unique.append(list[i])
-            i +=1
+def polynom(k):
+    import random
+    index = []
+    for i in range(0, k+1):
+        if i == 0:
+            index.append(str(random.randint(0, 100)))
+        elif i == 1:
+            index.append(f'{str(random.randint(0, 100))}*x ')
         else:
-            i +=1
-        
-    return unique
+            index.append(f'{str(random.randint(0, 100))}*x^{i} ')
+    string = f'{str(index[k])} + '
+    for j in reversed(range(k)):
+        if j == 0:
+            string += str(index[j])
+        else:
+            string += str(index[j]) + ' + '
+    string = string + ' = 0'
+    return string
 
-def check_element(list, element, count):
-    exception_index = []
-    i= count +1
-    while i < len(list):
-        if i == len(list)-1:
-            if list[i] == element:
-                return False
-            else:
-                return True
-        elif list[i] == element:
-            exception_index.append(i)
-        i +=1
-
-list = [1, 4, 7, 8, 10, 3, 4, 7, 1, 7, 1]
-print(get_unique(list))
+def new_file(name_file, k):
+    with open(name_file, 'w', encoding='utf-8') as file:
+        file.write(polynom(k))
+    return name_file
 
 
+k = int(input('enter k value '))
+name_file = input('enter name file ')+'.txt'
+new_file(name_file, k)
