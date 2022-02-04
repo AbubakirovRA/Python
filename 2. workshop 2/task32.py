@@ -47,8 +47,3 @@ print(f'{data}  =>  {get_unique(data)}')
 # number_of_unique_elements = len(set(list_d))
 # print("Number of elements in the list: ", number_of_elements)
 # print("Number of unique elements in the list: ", number_of_unique_elements)
-
-
-
-
-
