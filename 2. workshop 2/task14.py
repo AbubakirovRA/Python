@@ -9,4 +9,8 @@ def sum_float_digits(num):
         all_digits //= 10
     return sum
 
-print(sum_float_digits(5511.1511))
+from decimal import Decimal
+number = Decimal(input('Enter float number: '))
+print(f'Sum of digits of entered float number is: {sum_float_digits(Decimal(number))}')
+
+
