@@ -11,6 +11,6 @@ def sum_float_digits(num):
 
 from decimal import Decimal
 number = Decimal(input('Enter float number: '))
-print(f'Sum of digits of entered float number is: {sum_float_digits(Decimal(number))}')
+print(f'Sum of digits of entered float number is: {sum_float_digits((number))}')
 
 
