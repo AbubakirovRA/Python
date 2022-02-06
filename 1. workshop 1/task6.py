@@ -13,7 +13,7 @@ def request_number(message):
             num = int(input('enter integer '))
             return num
         except ValueError:
-            print('Your enterd wrong! Try one more, pleace!')
+            print('Your entered wrong! Try one more, pleace!')
 
 if Even(request_number('Hey! This is an even parity check of the entered digit.')):
     print('Yes! The number is even')

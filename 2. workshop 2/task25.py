@@ -58,8 +58,7 @@
 # print(get_bin(n))
 
 def get_bin(n): # обычный перевод через остаток от деления
-    if n == 0:
-        return 0    
+    
     bin_index = []
     while n > 0:
         bin_index.append(n%2)
