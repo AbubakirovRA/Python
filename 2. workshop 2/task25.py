@@ -31,12 +31,18 @@
 
 
 # def get_bin(n): # способ, "изобретенный" мной, через логарифм по основанию 2
+#     if n == 0:
+#         return 0
 #     last_bin = trunc(log2(n))
 #     bin_index = []
 #     while last_bin >= 0:
 #         if n == 0 and last_bin == 0:
 #             bin_index.append(0)
-#             break        
+#             break
+#         elif n == 0 and last_bin != 0:
+#             bin_index.append(0)
+#             last_bin -=1
+#             continue          
 #         if last_bin == trunc(log2(n)):
 #             bin_index.append(1)
 #         else:
@@ -52,6 +58,8 @@
 # print(get_bin(n))
 
 def get_bin(n): # обычный перевод через остаток от деления
+    if n == 0:
+        return 0    
     bin_index = []
     while n > 0:
         bin_index.append(n%2)
