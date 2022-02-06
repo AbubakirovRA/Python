@@ -18,7 +18,7 @@ def polynom():
             print('Wrong enter')
     for i in range(0, k+1):
         if i == 0:
-            rnd = random.randint(0, 100)
+            rnd = random.randint(0, 0)
             if rnd == 0:
                 index.append('')
             else:
@@ -53,8 +53,8 @@ def polynom():
                 string += ''
             else:
                 string += str(index[j]) + '+ '
-    if index[k] == '':
-        string[:-1]
+    if index[0] == '':
+        string[:-3]
     string = string + ' = 0'
     return string
 
