@@ -1,3 +1,6 @@
+# 30. Вычислить число  c заданной точностью d
+#     Пример: при d = 0.001,  = 3.141. 10-1d10-10
+
 # from https://www.pvsm.ru/python/185927
 
 from math import *
@@ -87,42 +90,40 @@ def pi_machin(n):
 def pi_gauss(one):
     return 4*(12*arctan(18) + 8*arctan(57) - 5*arctan(239))
 
-if __name__ == "__main__":
+N = 2000
+getcontext().prec = N
 
-    N = 2000
-    getcontext().prec = N
-
-    print("")
-    print("Arctan")
-    start = time()
-    my_pi = pi_machin(N)
-    print("Pi = {}".format(str(my_pi)))
-    print("Time", time()-start)
+print("")
+print("Arctan")
+start = time()
+my_pi = pi_machin(N)
+print("Pi = {}".format(str(my_pi)))
+print("Time", time()-start)
     
-    print("")
-    print("BBP")
-    start = time()
-    my_pi = bbp(N)
-    print("Pi = {}".format(str(my_pi)))
-    print("Time", time()-start)
+print("")
+print("BBP")
+start = time()
+my_pi = bbp(N)
+print("Pi = {}".format(str(my_pi)))
+print("Time", time()-start)
     
-    print("")
-    print("Bellard")
-    start = time()
-    my_pi = bellard(N)
-    print("Pi = {}".format(str(my_pi)))
-    print("Time", time()-start)
+print("")
+print("Bellard")
+start = time()
+my_pi = bellard(N)
+print("Pi = {}".format(str(my_pi)))
+print("Time", time()-start)
     
-    print("")
-    print("Chudnovsky")
-    start = time()
-    my_pi = chudnovsky(N/14)
-    print("Pi = {}".format(str(my_pi)))
-    print("Time", time()-start)
+print("")
+print("Chudnovsky")
+start = time()
+my_pi = chudnovsky(N/14)
+print("Pi = {}".format(str(my_pi)))
+print("Time", time()-start)
     
-    print("")
-    print("Chudnovsky2")
-    start = time()
-    my_pi = chudnovsky2(N/14)
-    print("Pi = {}".format(str(my_pi)))
-    print("Time", time()-start)
+print("")
+print("Chudnovsky2")
+start = time()
+my_pi = chudnovsky2(N/14)
+print("Pi = {}".format(str(my_pi)))
+print("Time", time()-start)
