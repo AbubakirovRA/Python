@@ -13,12 +13,12 @@ def polynom(k):
             index.append(f'{str(random.randint(0, 100))}*x ')
         else:
             index.append(f'{str(random.randint(0, 100))}*x^{i} ')
-    string = f'{str(index[k])} + '
+    string = f'{str(index[k])}+ '
     for j in reversed(range(k)):
         if j == 0:
             string += str(index[j])
         else:
-            string += str(index[j]) + ' + '
+            string += str(index[j]) + '+ '
     string = string + ' = 0'
     return string
 
