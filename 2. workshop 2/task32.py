@@ -1,49 +1,30 @@
-# 32. Дана последовательность чисел.
-# Получить список уникальных элементов заданной последовательности.
+# 32. Дана последовательность чисел. 
+#     Получить список неповторяющихся элементов исходной последовательности
+#     Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [1, 2, 3, 5, 10]
 
-def get_unique(data):
-    i = 0
-    exception_index = []
-    while i < len(data):
-        if i == len(data) - 1:
-            break
-        exception_index = check_element(data, data[i], i)
-        if exception_index == []:
-            i +=1
-            continue
-        else:
-            data = [i for i in data if data.index(i) not in exception_index]
-            # for n in sorted(exception_index, reverse=True):
-            #     del data[n]
-            i = 0
-            continue
-    return data
+list1 = [1, 2, 3, 0, 5, 1, 5, 14, 26, 155, 3, 10]
+# list2 = sorted(list1)
 
-def check_element(data, element, count):
-    i = count +1
-    exception_index = []
-    while i < len(data):
-        if i == len(data)-1:
-            if data[i] == element:
-                exception_index.append(count)
-                exception_index.append(i)
-                return exception_index
+# for i in reversed(range(len(list2)-1)):
+#     if list2[i+1] > list2[i]:
+#         continue
+#     elif list2[i] == list2[i+1]:
+#         list2.remove(list2[i])
+# print(f'{list1} => {list2}')
+
+list2=[]
+k = 1
+for j in range(len(list1)-1):
+    for i in range(len(list1)-1):
+        try:
+            if list1[j] == list1[i+k]:
+                k += 1
+                break
+        except ValueError:         
+            if i == len(list1)-1:
+                list2.append(list1[j])
+                k += 1
             else:
-                return exception_index
-        elif data[i] == element:
-            exception_index.append(count)
-            exception_index.append(i)
-        i +=1
-
-data = [1, 4, 8, 10, 3, 4, 7, 1, 1, 4 , 5, 1]
-print(f'{data}  =>  {get_unique(data)}')
-
-
-# ______________________________________
-# Получение количества уникальных элементов
-
-# list_d = [100, 3, 100, "c", 100, 7.9, "c", 15]
-# number_of_elements = len(list_d)
-# number_of_unique_elements = len(set(list_d))
-# print("Number of elements in the list: ", number_of_elements)
-# print("Number of unique elements in the list: ", number_of_unique_elements)
+                continue
+            k = 0
+print(f'{list1} => {list2}') 

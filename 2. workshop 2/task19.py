@@ -3,7 +3,6 @@
 # https://habr.com/ru/post/499490/
 
 from math import *
-from random import seed
 def rnd(m1, m2):
     import time
     seed = time.time()
