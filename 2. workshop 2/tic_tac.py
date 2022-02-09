@@ -2,12 +2,14 @@ import os
 def cls():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def draw_board(board):
+def draw_board():
     cls()
-    print('-------------')
+    board = list(range(10))
+    print('    number of cell         Game board')
+    print('    -------------        -------------')
     for i in range(3):
-        print(f'| {board[0+i*3]} | {board[1+i*3]} | {board[2+i*3]} |')
-        print('-------------')
+        print(f'    | {board[0+i*3]} | {board[1+i*3]} | {board[2+i*3]} |        |   |   |   |')
+        print('    -------------        -------------')
 
 def request_number(title):
     while True:
@@ -16,28 +18,28 @@ def request_number(title):
             if 0 < num < 10:
                 return num
         except ValueError:
-            print('Your entered wrong! One more!)')
+            print('         Your entered wrong! One more!)')
 
 def init_game():
-    print('---------------------')
-    print('______HI, THERE!____')
-    print('This is TIC-TAC Game!')
-    print('---------------------')
+    cls()
+    print('             ---------------------')
+    print('             ______HI, THERE!____')
+    print('             This is TIC-TAC Game!')
+    print('             ---------------------')
     print()
-    print('______RULES__________')
-    print('The first move is made by the player who plays for X\nThe turn order is determined by tossing a coin.')
+    print('             ______RULES__________')
+    print('The game is played by two players: Player1 and Player2.\nThe first move is made by the player who plays for X\nWho goes first is determined by tossing a coin.')
+    print()
+    print('Field cells are numbered from 1 to 9.\nTo put your symbol (X or O) in a cell,\njust enter the number of cell')
     print()
     import random
-    first_step = random.randint(1 ,2)
-    while True:
-        player1, player2 = input('Enter name Player1: '), input('Enter name Player2: ')
-        if player1 != player2:
-            if player1 != '' and player2 != '':
-                return player1, player2, first_step
-        print('Wrong enter!(Empty or same names')
+    if input('Do Yoy want to play game? ').lower() == 'y':
+        return random.randint(1, 2)
+    else:
+        return -1
 
-print (init_game())
-board = list(range(10))
-draw_board(board)
-print(request_number('enter integer from 0 to 9 '))
+init_game()
+draw_board()
+
+# print(request_number('   enter number of cell from 0 to 9 '))
 
